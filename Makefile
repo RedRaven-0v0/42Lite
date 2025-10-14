@@ -58,7 +58,7 @@ RM = rm -rf
 #                   RULES                            #
 # -------------------------------------------------- #
 
-all: $(NAME)
+all: reset_exp $(NAME)
 
 $(OBJ_DIR)/%.o: %.cpp $(HEADERS) | $(OBJ_DIR)
 	@$(MKDIR) $(dir $@)
@@ -90,4 +90,7 @@ run: all
 	@echo "Running $(NAME)..."
 	@./$(NAME)
 
-.PHONY: all clean fclean re run
+reset_exp:
+	@echo "EXP_TOTAL 0" > datas/player_data.txt
+
+.PHONY: all clean fclean re run reset_exp
