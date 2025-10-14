@@ -28,15 +28,17 @@ Hero create_hero_from_file(const std::string &filename)
 		exit(1);
 	}
 
-	auto unlocks = ExpManager::load_unlocks("data/class_unlocks.txt");
+	auto unlocks = ExpManager::load_unlocks("datas/class_unlocks.txt");
 	int total_exp = ExpManager::get_total_exp();
 	std::vector<HeroClass> available_classes;
+
 	for (const auto &c : classes)
 	{
 		auto it = unlocks.find(c.name);
-		if (it == unlocks.end() || total_exp >= it->second)
+		if (it != unlocks.end() && total_exp >= it->second)
 			available_classes.push_back(c);
 	}
+
 	if (available_classes.empty())
 	{
 		std::cerr << "Aucune classe debloquee. Jouez pour gagner de l'experience !\n";
@@ -84,7 +86,6 @@ Hero create_hero_from_file(const std::string &filename)
 	int choice = 0;
 	while (true)
 	{
-		
 		slow_print("\nVotre choix (1-" + std::to_string(available_classes.size()) + ") : ", 30, TextColor::YELLOW);
 		std::string input;
 		enableInput();
@@ -110,7 +111,7 @@ Hero create_hero_from_file(const std::string &filename)
 		input.erase(0, input.find_first_not_of(" \t\r\n"));
 		input.erase(input.find_last_not_of(" \t\r\n") + 1);
 		disableInput();
-	
+
 		bool is_number = !input.empty() && std::all_of(input.begin(), input.end(), ::isdigit);
 		if (is_number)
 		{
@@ -122,6 +123,7 @@ Hero create_hero_from_file(const std::string &filename)
 		std::cout << "Choix invalide. Reessayez.\n";
 		std::cout << get_color_code(TextColor::DEFAULT);
 	}
+
 	HeroClass selected = available_classes[choice - 1];
 	Hero hero(player_name, selected.hp, selected.speed, selected.defense, selected.shield,
 			  selected.atk_damage, selected.crit_rate, selected.crit_damage, selected.dodge_rate);

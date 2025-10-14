@@ -1,6 +1,6 @@
 #include "exp_manager.hpp"
 
-const std::string ExpManager::exp_file = "data/player_data.txt";
+const std::string ExpManager::exp_file = "datas/player_data.txt";
 
 int ExpManager::get_total_exp()
 {
@@ -41,7 +41,7 @@ std::unordered_map<std::string, int> ExpManager::load_unlocks(const std::string 
 	int exp;
 	while (file >> name >> exp)
 		unlocks[name] = exp;
-	return unlocks;
+	return (unlocks);
 }
 
 void ExpManager::display_unlockable_classes(const std::string &filename)
@@ -85,5 +85,5 @@ std::vector<HeroClass> ExpManager::get_unlocked_classes(const std::string &class
 		if (unlocks.find(hc.name) == unlocks.end() || total_exp >= unlocks[hc.name])
 			classes.push_back(hc);
 	}
-	return classes;
+	return (classes);
 }

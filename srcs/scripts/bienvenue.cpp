@@ -43,8 +43,8 @@ static bool to_skip(void)
                   << "Choix invalide. Reessayez.\n"
                   << get_color_code(TextColor::DEFAULT);
     }
-
     std::cout << "\n";
+	return (false);
 }
 
 void	bienvenue(Hero *heros)
