@@ -1,0 +1,11 @@
+# NomUpgrade COUT PV SPEED DEFENSE SHIELD ATK CRIT_RATE CRIT_DMG DODGE_RATE REWARD
+Chaussettes_puantes 0 -10 0 0 0 0 0 0 0 0
+Arguments_du_main 25 0 0 5 0 0 0 0 0 0
+Cours_de_mma 25 0 0 0 0 10 0 0 0 0
+Club_de_ping-pong 25 0 10 0 0 0 0 0 0 0
+Salle_de_muscu 25 25 0 0 0 0 0 0 0 0
+Pchit-Pchit_magique 25 0 0 0 0 0 0 0 0 50
+Cours_d'echecs 50 0 0 0 0 0 10 50 0 0
+Lunettes_de_soleil 50 0 0 0 100 0 0 0 0 0
+Raquette_de_max 100 0 10 0 0 10 10 50 5 0
+Nouveau_clavier 100 0 5 0 50 20 0 20 0 0
