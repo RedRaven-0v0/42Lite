@@ -28,23 +28,23 @@ public:
     void    set_defense(int amount)
     {
         _defense += amount;
-        if (_defense > 99)
-            _defense = 99;
+        if (_defense > 90)
+            _defense = 90;
     }
     void    set_shield(int amount) { _shield += amount; }
     void    set_atk_damage(int amount) { _atk_damage += amount; }
     void    set_crit_rate(int amount)
     {
         _crit_rate += amount;
-        if (_crit_rate > 99)
-            _crit_rate = 100;
+        if (_crit_rate > 90)
+            _crit_rate = 90;
     }
     void    set_crit_damage(int amount) { _crit_damage += amount; }
     void    set_dodge_rate(int amount)
     {
         _dodge_rate += amount;
-        if (_dodge_rate > 99)
-            _dodge_rate = 99;
+        if (_dodge_rate > 90)
+            _dodge_rate = 90;
     }
 
     std::string get_name() const { return _name; }

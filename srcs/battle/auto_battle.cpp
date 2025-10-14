@@ -22,6 +22,7 @@ void auto_battle(Hero &hero, Enemy &enemy)
         first = &enemy;
         second = &hero;
     }
+    slow_print(first->get_name() + " est plus rapide !\n", 30, TextColor::YELLOW);
     int turn = 1;
     while (hero.is_alive() && enemy.is_alive())
     {

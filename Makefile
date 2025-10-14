@@ -5,7 +5,7 @@
 NAME = game.bin
 
 CXX = c++
-CXXFLAGS = -std=c++17 -g3 -I includes -I hero -I enemies -I upgrades
+CXXFLAGS = -std=c++17 -g3 -I includes -I hero -I enemies -I upgrades -I exp_manager
 
 SRC_DIR = .
 OBJ_DIR = obj
@@ -17,7 +17,8 @@ HEADERS = \
 	includes/character.hpp \
 	hero/hero.hpp \
 	enemies/enemies.hpp \
-	upgrades/upgrades.hpp
+	upgrades/upgrades.hpp \
+	exp_manager/exp_manager.hpp \
 
 SRCS = \
 	srcs/main.cpp \
@@ -45,7 +46,8 @@ SRCS = \
 	includes/character.cpp \
 	hero/hero.cpp \
 	enemies/enemies.cpp \
-	upgrades/upgrades.cpp
+	upgrades/upgrades.cpp \
+	exp_manager/exp_manager.cpp \
 
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 

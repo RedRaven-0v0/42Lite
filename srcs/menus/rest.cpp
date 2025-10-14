@@ -22,7 +22,7 @@ static void kahwa(Hero *heros)
 	{
 		heros->change_max_hp(5);
 		slow_print("Il est croustillant ce cafe...\n", 50, TextColor::RED);
-		slow_print(heros->get_name() + " se sent legerement plus lourd !\n", 30, TextColor::MAGENTA);
+		slow_print(heros->get_name() + " sent une presence etrangere dans son corps !\n", 30, TextColor::MAGENTA);
 	}
 }
 
@@ -48,7 +48,25 @@ static void	tegou(Hero *heros)
 		slow_print("Vous prendrez bien :\n[1] Kahwa\n[2] Banane\n[3] Binouze\n[4] Belvita\n\nVotre choix (1-4) : ", 30, TextColor::YELLOW);
 		std::string input;
 		enableInput();
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			if (std::cin.eof())
+			{
+				std::cin.clear();
+				std::cout	<< get_color_code(TextColor::RED)
+							<< "\nFin de l'entree detectee (Ctrl+D). Fin du programme.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				exit(0);
+			}
+			else
+			{
+				std::cin.clear();
+				std::cout   << get_color_code(TextColor::RED)
+							<< "\nErreur de lecture.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				continue ;
+			}
+		}
 		disableInput();
 		input.erase(0, input.find_first_not_of(" \t\r\n"));
 		input.erase(input.find_last_not_of(" \t\r\n") + 1);
@@ -88,12 +106,12 @@ static void	tegou(Hero *heros)
 
 void	rest(Hero *heros, std::vector<Upgrades> upgrades)
 {
-	slow_print("C'est l'heure du TEGOU ! J'espere que vous avez rapporte de quoi grignoter !\n", 30, TextColor::GREEN);
+	slow_print("C'est l'heure du TEGOU ! J'espere que vous avez rapporte de quoi grignoter !\n", 15, TextColor::GREEN);
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	slow_print("Asseyez vous et reposez vous, c'est le moment !\n", 30, TextColor::GREEN);
+	slow_print("Asseyez vous et reposez vous, c'est le moment !\n", 15, TextColor::GREEN);
     std::this_thread::sleep_for(std::chrono::milliseconds(500));
-	slow_print("Vous vous posez sur une banquette : ", 30, TextColor::GREEN);
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	slow_print("Vous vous posez sur une banquette : ", 15, TextColor::GREEN);
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	heros->heal(50);
     std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	to_continue();

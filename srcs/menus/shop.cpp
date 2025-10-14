@@ -44,7 +44,25 @@ void	shop(Hero *heros, std::vector<Upgrades> &all_upgrades)
 		std::string input;
 		std::cout << "\nVotre choix : ";
 		enableInput();
-		std::getline(std::cin, input);
+		if (!std::getline(std::cin, input))
+		{
+			if (std::cin.eof())
+			{
+				std::cin.clear();
+				std::cout	<< get_color_code(TextColor::RED)
+							<< "\nFin de l'entree detectee (Ctrl+D). Fin du programme.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				exit(0);
+			}
+			else
+			{
+				std::cin.clear();
+				std::cout   << get_color_code(TextColor::RED)
+							<< "\nErreur de lecture.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				continue ;
+			}
+		}
 		disableInput();
 		input.erase(0, input.find_first_not_of(" \t\r\n"));
 		input.erase(input.find_last_not_of(" \t\r\n") + 1);

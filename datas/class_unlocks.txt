@@ -1,0 +1,10 @@
+# NomClasse EXPRequise
+Chomeur 0
+Lyceen 0
+Sportif 200
+Cuistot 400
+Graphiste 600
+Historien 800
+Electronicien 1000 
+Surfeur 1500
+Sudiste 2000

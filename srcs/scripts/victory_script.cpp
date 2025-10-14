@@ -47,7 +47,25 @@ bool	victory_script(Hero *heros)
     {
         slow_print("\n[1] Continuer en post tronc commun\n[2] Me faire alumniser, je n'ai pas le temps je veux travailler\n\nVotre choix (1-2) ? ", 30, TextColor::YELLOW);
         enableInput();
-        std::getline(std::cin, input);
+        if (!std::getline(std::cin, input))
+		{
+			if (std::cin.eof())
+			{
+				std::cin.clear();
+				std::cout	<< get_color_code(TextColor::RED)
+							<< "\nFin de l'entree detectee (Ctrl+D). Fin du programme.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				exit(0);
+			}
+			else
+			{
+				std::cin.clear();
+				std::cout   << get_color_code(TextColor::RED)
+							<< "\nErreur de lecture.\n"
+							<< get_color_code(TextColor::DEFAULT);
+				continue ;
+			}
+		}
         disableInput();
         input.erase(0, input.find_first_not_of(" \t\r\n"));
         input.erase(input.find_last_not_of(" \t\r\n") + 1);

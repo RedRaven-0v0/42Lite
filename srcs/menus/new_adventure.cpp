@@ -90,13 +90,21 @@ void	infinite_adventure(Hero *heros, const std::vector<Enemy> *baseEnemies, std:
 	{
 		std::vector<Enemy> Enemies = *baseEnemies;
 		int level_increase = loop_count * 10;
-		float stat_multiplier = 1.0f + (loop_count * 0.5f);
+		float stat_multiplier = 1.0f + (loop_count * 1.0f);
 		for (auto &enemy : Enemies)
 		{
 			enemy.change_level(enemy.get_level() + level_increase);
 			enemy.set_hp(enemy.get_hp() * stat_multiplier);
 			enemy.set_atk_damage(enemy.get_atk_damage() * stat_multiplier);
-			enemy.set_crit_damage(enemy.get_crit_damage() * (1.0f + loop_count * 0.25f));
+			enemy.set_crit_damage(enemy.get_crit_damage() * (1.0f + loop_count * 0.5f));
+		}
+		if (7 + loop_count == 18)
+		{
+			slow_print("Bien joue ! Vous avez atteint le niveau 17, vous obtenez le RNCP 6 !\n", 40, TextColor::GREEN);
+		}
+		else if (7 + loop_count == 22)
+		{
+			slow_print("Bien joue ! Vous avez atteint le niveau 21, vous obtenez le RNCP 7 !\n", 40, TextColor::GREEN);
 		}
 		slow_print("\n--- 🌋 Niveau +1 (" + std::to_string(7 + loop_count) + ") ---\n", 40, TextColor::MAGENTA);
 		std::this_thread::sleep_for(std::chrono::milliseconds(800));
