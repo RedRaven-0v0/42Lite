@@ -21,6 +21,7 @@ public:
     int		        get_amount_golds() const { return _amount_golds; }
     int		        get_max_hp() const { return _max_hp; }
     std::string		get_class_name() const { return _class_name; }
+    void            ability();
 
 private:
 	int         _max_hp;

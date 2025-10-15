@@ -4,6 +4,8 @@ void auto_battle(Hero &hero, Enemy &enemy)
 {
 	slow_print("\nUn ennemi approche...\n", 25, TextColor::YELLOW);
 	slow_print("C'est " + enemy.get_name() + " (Level " + std::to_string(enemy.get_level()) + ")\n", 25, TextColor::MAGENTA);
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	ability();
 	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	display_side_by_side(hero, enemy);
 	to_continue();
