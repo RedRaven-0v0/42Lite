@@ -11,7 +11,7 @@ It’s a text-based game (in French) that runs entirely in the terminal.
 <pre><span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ make
 Compiling sources... Build successful!</pre>
 3. Run the game :
-<pre> <span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ ./game.bin
+<pre><span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ ./game.bin
 Welcome to 42Lite! </pre>
 4. Enjoy the adventure!
 
