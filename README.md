@@ -6,9 +6,9 @@ It’s a text-based game (in French) that runs entirely in the terminal.
 🕹️ How to Play ?
 
 1. Open a terminal and go in the repository directory :
-<pre> <span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/current_dir</span>$ cd 42Lite</pre>
+<pre><span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/current_dir</span>$ cd 42Lite</pre>
 2. Build the game (it will reset the exp of the player) :
-<pre> <span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ make
+<pre><span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ make
 Compiling sources... Build successful!</pre>
 3. Run the game :
 <pre> <span style="color:#00FF7F;">user@42lite</span>:<span style="color:#6495ED;">~/42Lite</span>$ ./game.bin
