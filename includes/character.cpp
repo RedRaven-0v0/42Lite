@@ -27,7 +27,7 @@ int	Character::attack() const
 	if (Character::is_crit())
 	{
 		damage = _crit_damage;
-		slow_print(get_name() + " fais un ", 10, TextColor::YELLOW);
+		slow_print(get_name() + " fait un ", 10, TextColor::YELLOW);
 		slow_print("coup critique", 10, TextColor::RED);
 		slow_print(" avec ", 10, TextColor::YELLOW);
 		slow_print(std::to_string(damage), 10, TextColor::RED);

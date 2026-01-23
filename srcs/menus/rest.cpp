@@ -5,7 +5,7 @@ static void	banane(Hero *heros)
 	heros->set_atk_damage(10);
 	heros->set_crit_damage((heros->get_crit_damage() / heros->get_atk_damage() * 10));
 	slow_print(heros->get_name() + " se sent plus puissant !\n", 30, TextColor::GREEN);
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	slow_print("Beurk une banane.\n", 50, TextColor::RED);
 }
 
@@ -99,7 +99,7 @@ static void	tegou(Hero *heros)
 		std::cout << "Choix invalide. Reessayez.\n";
 		std::cout << get_color_code(TextColor::DEFAULT);
 	}
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	slow_print("Miam miam...\n", 30, TextColor::YELLOW);
 	std::cout << "\n";
 }
@@ -107,13 +107,15 @@ static void	tegou(Hero *heros)
 void	rest(Hero *heros, std::vector<Upgrades> upgrades)
 {
 	slow_print("C'est l'heure du TEGOU ! J'espere que vous avez rapporte de quoi grignoter !\n", 15, TextColor::GREEN);
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	slow_print("Asseyez vous et reposez vous, c'est le moment !\n", 15, TextColor::GREEN);
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	heros->ability();
+	std::this_thread::sleep_for(std::chrono::milliseconds(250));
 	slow_print("Vous vous posez sur une banquette : ", 15, TextColor::GREEN);
-    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	heros->heal(50);
-    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+	std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 	to_continue();
 	std::cout << "\033[2J\033[1;1H";
 	heros->display_info();

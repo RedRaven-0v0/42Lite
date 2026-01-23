@@ -22,10 +22,10 @@ public:
 	void	take_damage(int amount);
 	bool	is_alive() const; 
 
-	void    set_name(std::string name) { _name = name; }
-	void    set_hp(int amount) { _hp += amount; }
-	void    set_speed(int amount) { _speed += amount; }
-	void    set_defense(int amount)
+	void	set_name(std::string name) { _name = name; }
+	void	set_hp(int amount) { _hp += amount; }
+	void	set_speed(int amount) { _speed += amount; }
+	void	set_defense(int amount)
 	{
 		_defense += amount;
 		if (_defense > 90)

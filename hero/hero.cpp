@@ -52,157 +52,172 @@ void	Hero::heal(int amount)
 static std::string	print_ability_chomeur()
 {
 	std::vector<std::string> quote = {
-        "\"J'ai bien besoin d'une pause.\"\n",
+		"\"J'ai bien besoin d'une pause.\"\n",
 		"\"On est le 28 ? Faut s'actualiser !\"\n",
 		"\"Mon canape me maaaaanque...\"\n",
 		"\"Cette fois-ci ca va le faire !\"\n",
 		"\"J'ai besoin d'un boulot...\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_lyceen()
 {
 	std::vector<std::string> quote = {
-        "\"Puree, toujours pas 17h ! Ah non, c'est vrai...\"\n",
+		"\"Puree, toujours pas 17h ! Ah non, c'est vrai...\"\n",
 		"\"Ils sont ou les profs ???\"\n",
 		"\"Heureusement que j'ai fait info...\"\n",
 		"\"C'est pas du python ???\"\n",
 		"\"J'espere qu'ils ont des frites a la cantine !\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_sportif()
 {
 	std::vector<std::string> quote = {
-        "\"Il faut que j'aille a la salle ce soir.\"\n",
+		"\"Il faut que j'aille a la salle ce soir.\"\n",
 		"\"J'ai besoin de plus de prots !\"\n",
 		"\"Encore 3 tours de terrain.\"\n",
 		"\"NO PAIN, NO GAIN !\"\n",
 		"\"Moi taper ballooon\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_cuistot()
 {
 	std::vector<std::string> quote = {
-        "\"Ca avec un peu de sel, ca s'mange !\"\n",
+		"\"Ca avec un peu de sel, ca s'mange !\"\n",
 		"\"Stop au gaspi !\"\n",
 		"\"Je vais cracher dans ta soupe !\"\n",
 		"\"Un soupcon de poivre pour ces gourmets ?\"\n",
 		"\"Mais c'est pas la saison ??!\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_graphiste()
 {
 	std::vector<std::string> quote = {
-        "\"Stylee cette animation !\"\n",
+		"\"Stylee cette animation !\"\n",
 		"\"Le bas-ni... quoi ?\"\n",
 		"\"J'aurais fait plus beau\"\n",
 		"\"Mais elle est ou la fenetre graphiqueee ?\"\n",
 		"\"Pas de fenetre graphique ? Je ne joue pas !\"\n",
 		"\"Mais que c'est laid !\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_historien()
 {
 	std::vector<std::string> quote = {
-        "\"Il y a du lore ?\"\n",
+		"\"Il y a du lore ?\"\n",
 		"\"J'ai besoin d'images svp.\"\n",
 		"\"Ca fait un an que je buche dessus !\"\n",
 		"\"Il y a longtemps, ce n'etait pas comme ca...\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_electronicien()
 {
 	std::vector<std::string> quote = {
-        "\"J'ai juste besoin d'un oscillo.\"\n",
+		"\"J'ai juste besoin d'un oscillo.\"\n",
 		"\"Nan mais ca doit etre un probleme hardware...\"\n",
 		"\"T'es sur que c'est bien branche ?\"\n",
 		"\"Il y a comme un bruit bizarre...\"\n",
 		"\"C'est quoi cette odeur de brule ?\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_surfeur()
 {
 	std::vector<std::string> quote = {
-        "\"Beaux pieds ! Tu fais gouter ?"\n",
+		"\"Beaux pieds ! Tu fais gouter ?\"\n",
 		"\"Yo le gourmandinier tenebreux !\"\n",
 		"\"Oh noooo, my big cranium !!!\"\n",
 		"\"J'me tire en Grece les gens !\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
 }
 
 static std::string	print_ability_sudiste()
 {
 	std::vector<std::string> quote = {
-        "\"Tranquiiiiiille on a le temps !\"\n",
+		"\"Tranquiiiiiille on a le temps !\"\n",
 		"\"P'tite binouze ?\"\n",
 		"\"Ca vient faire un plouf dans la piscine ?\"\n",
 		"\"J'vais t'mettre dans la poubelle !\"\n",
 		"\"Gouuuuuuurmand va !\"\n"
-    };
+	};
 	std::srand(std::time(nullptr));
-    int index = std::rand() % quote.size();
+	int index = std::rand() % quote.size();
 	return (quote[index]);
+}
+
+Classes	strToClasses(std::string class_name)
+{
+	if (class_name == "Chomeur") return (CHOMEUR);
+	if (class_name == "Lyceen") return (LYCEEN);
+	if (class_name == "Sportif") return (SPORTIF);
+	if (class_name == "Cuistot") return (CUISTOT);
+	if (class_name == "Graphiste") return (GRAPHISTE);
+	if (class_name == "Historien") return (HISTORIEN);
+	if (class_name == "Electronicien") return (ELECTRONICIEN);
+	if (class_name == "Surfeur") return (SURFEUR);
+	if (class_name == "Sudiste") return (SUDISTE);
+	return (UNKNOWN);
 }
 
 void	Hero::ability(void)
 {
-	switch (_class_name)
+	Classes Class_name = strToClasses(_class_name);
+	switch (Class_name)
 	{
-		case "Chomeur":
+		case CHOMEUR:
 			slow_print(print_ability_chomeur(), 30, TextColor::DEFAULT);
 			break ;
-		case "Lyceen":
+		case LYCEEN:
 			slow_print(print_ability_lyceen(), 30, TextColor::DEFAULT);
 			break ;
-		case "Sportif":
+		case SPORTIF:
 			slow_print(print_ability_sportif(), 30, TextColor::DEFAULT);
 			break ;
-		case "Cuistot":
+		case CUISTOT:
 			slow_print(print_ability_cuistot(), 30, TextColor::DEFAULT);
 			break ;
-		case "Graphiste":
+		case GRAPHISTE:
 			slow_print(print_ability_graphiste(), 30, TextColor::DEFAULT);
 			break ;
-		case "Historien":
+		case HISTORIEN:
 			slow_print(print_ability_historien(), 30, TextColor::DEFAULT);
 			break ;
-		case "Electronicien":
+		case ELECTRONICIEN:
 			slow_print(print_ability_electronicien(), 30, TextColor::DEFAULT);
 			break ;
-		case "Surfeur":
+		case SURFEUR:
 			slow_print(print_ability_surfeur(), 30, TextColor::DEFAULT);
 			break ;
-		case "Sudiste":
+		case SUDISTE:
 			slow_print(print_ability_sudiste(), 30, TextColor::DEFAULT);
 			break ;
 		default :
